@@ -18,6 +18,7 @@ TagManager:
   - Color 4 Text
   - Color Manager
   - Canvas
+  - Ball
   layers:
   - Default
   - TransparentFX

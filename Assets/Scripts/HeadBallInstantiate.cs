@@ -28,12 +28,19 @@ public class HeadBallInstantiate : MonoBehaviour
         
         // FINISH
         int ballIndex = GetSpriteIndex("ballSprite");
-        GameObject ballObject = InstantiatePrefab(ballPrefabs[ballIndex]);
+        GameObject ballObject = InstantiateBallPrefab(ballPrefabs[ballIndex]);
         arrowObject.GetComponent<ArrowBallFollow>().ball = ballObject;
     }
 
     private int GetSpriteIndex(string spriteName) {
         return int.Parse(PlayerPrefs.GetString(spriteName));
+    }
+
+    private GameObject InstantiateBallPrefab(GameObject prefab) {
+        GameObject newObject = Instantiate(prefab, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+        GameObject canvas = GameObject.FindGameObjectWithTag("Ball");
+        newObject.transform.SetParent(canvas.transform, false);
+        return newObject;
     }
 
     private GameObject InstantiatePrefab(GameObject prefab) {
