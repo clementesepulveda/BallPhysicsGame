@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShowHideSkinMenus : MonoBehaviour
 {
     public int buttonId;
+    public Image buttonImage;
     public GameObject[] menus;
 
     public void SetThisMenu() {
