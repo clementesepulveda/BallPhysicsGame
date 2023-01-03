@@ -10,6 +10,8 @@ public class ShowHideSkinMenus : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public int buttonId;
     public Image buttonImage;
     public GameObject[] menus;
+    // public GameObject colorManager;
+
 
     public float onHoverDownTranslate = -10;
     private Vector3 originalPosition;
@@ -19,11 +21,15 @@ public class ShowHideSkinMenus : MonoBehaviour, IPointerEnterHandler, IPointerEx
     }
 
     public void SetThisMenu() {
+        GameEvents.current.ButtonPress();
+
+        
         foreach (var menu in menus) {
             menu.SetActive(false);
         }
 
         menus[buttonId].SetActive(true);
+        GameObject.FindGameObjectWithTag($"Color Manager").GetComponent<ColorManager>().LoadColors();
     }
      
     public void OnPointerEnter(PointerEventData eventData) {

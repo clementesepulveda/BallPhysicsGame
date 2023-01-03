@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeadBallInstantiate : MonoBehaviour
 {
     public GameObject arrowObject;
+    public GameObject playerObject;
 
     public Sprite[] headSprites;
     public Sprite[] neckSprites;
@@ -30,6 +31,9 @@ public class HeadBallInstantiate : MonoBehaviour
         int ballIndex = GetSpriteIndex("ballSprite");
         GameObject ballObject = InstantiateBallPrefab(ballPrefabs[ballIndex]);
         arrowObject.GetComponent<ArrowBallFollow>().ball = ballObject;
+
+        int headIndex = GetSpriteIndex("headSprite");
+        InstantiateHeadPrefab(headSprites[headIndex]);
     }
 
     private int GetSpriteIndex(string spriteName) {
@@ -48,6 +52,10 @@ public class HeadBallInstantiate : MonoBehaviour
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
         newObject.transform.SetParent(canvas.transform, false);
         return newObject;
+    }
+
+    private void InstantiateHeadPrefab(Sprite sprite) {
+        playerObject.GetComponent<SpriteRenderer>().sprite = sprite;
     }
 
 }
