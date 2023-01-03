@@ -34,11 +34,9 @@ public class ShowHideSkinMenus : MonoBehaviour, IPointerEnterHandler, IPointerEx
      
     public void OnPointerEnter(PointerEventData eventData) {
         transform.position += new Vector3(0, onHoverDownTranslate, 0);
-        Debug.Log("Enter");
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         transform.position -= new Vector3(0, onHoverDownTranslate, 0);
-        Debug.Log("Exit");
     }
 }

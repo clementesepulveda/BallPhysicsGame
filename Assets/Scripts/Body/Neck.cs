@@ -15,14 +15,10 @@ public class Neck : MonoBehaviour
     void Start() {
         pointTo = GameObject.FindGameObjectWithTag("Point To");
         head = GameObject.FindGameObjectWithTag("Player");
-        targetPosition = new Vector3(0,0,0);
-        // targetPosition = new Vector3(head.transform.position.x,pointTo.transform.position.y,0);
+        targetPosition = new Vector3(head.transform.position.x,pointTo.transform.position.y,0);
     }
 
     void Update() {
-
-        // pointTo = GameObject.FindGameObjectWithTag("Point To");
-        // head = GameObject.FindGameObjectWithTag("Player");
 
         // not smooth y ball movement
         Vector3 pointToPos = pointTo.transform.position;
