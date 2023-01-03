@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Neck : MonoBehaviour
 {
-    public GameObject head;
+    private GameObject head;
     public GameObject pointTo;
     public float headToPointDistance;
     public float smoothTime = 0.25f;
@@ -13,10 +13,17 @@ public class Neck : MonoBehaviour
 
     private Vector3 targetPosition;
     void Start() {
-        targetPosition = new Vector3(head.transform.position.x,pointTo.transform.position.y,0);
+        pointTo = GameObject.FindGameObjectWithTag("Point To");
+        head = GameObject.FindGameObjectWithTag("Player");
+        targetPosition = new Vector3(0,0,0);
+        // targetPosition = new Vector3(head.transform.position.x,pointTo.transform.position.y,0);
     }
 
     void Update() {
+
+        // pointTo = GameObject.FindGameObjectWithTag("Point To");
+        // head = GameObject.FindGameObjectWithTag("Player");
+
         // not smooth y ball movement
         Vector3 pointToPos = pointTo.transform.position;
         pointToPos.y = head.transform.position.y - headToPointDistance;
