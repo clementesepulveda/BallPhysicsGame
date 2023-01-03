@@ -19,6 +19,9 @@ TagManager:
   - Color Manager
   - Canvas
   - Ball
+  - Head Sprite
+  - Neck
+  - Point To
   layers:
   - Default
   - TransparentFX
