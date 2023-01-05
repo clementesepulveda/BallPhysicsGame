@@ -10,21 +10,28 @@ public class ColorManager : MonoBehaviour
     public Color color2;
     public Color color3;
     public Color color4;
+
+    private Color[] defaultColors;
     
     // Start is called before the first frame update
     void Start() {
-        if (!PlayerPrefs.HasKey("Color1")) {
-            InstantiateDefaultColors();
-        }
+        defaultColors = new Color[]{color1, color2, color3, color4};
+        CheckAndInstantiate();
         LocalSave();
         LoadColors();
     }
 
+    void CheckAndInstantiate() {
+        if (!PlayerPrefs.HasKey("Color1")) {
+            InstantiateDefaultColors();
+        }
+    }
+
     void InstantiateDefaultColors() {
-        PlayerPrefs.SetString("Color1", color1.ToString());
-        PlayerPrefs.SetString("Color2", color2.ToString());
-        PlayerPrefs.SetString("Color3", color3.ToString());
-        PlayerPrefs.SetString("Color4", color4.ToString());
+        PlayerPrefs.SetString("Color1", defaultColors[0].ToString());
+        PlayerPrefs.SetString("Color2", defaultColors[1].ToString());
+        PlayerPrefs.SetString("Color3", defaultColors[2].ToString());
+        PlayerPrefs.SetString("Color4", defaultColors[3].ToString());
         PlayerPrefs.Save();
     }
 
@@ -36,6 +43,7 @@ public class ColorManager : MonoBehaviour
     }
 
     public void LoadColors() {
+        CheckAndInstantiate();
         LocalSave();
 
         Camera.main.backgroundColor = color2;

@@ -6,6 +6,10 @@ public class ResetHighScore : MonoBehaviour
 {
     public void ResetScore() {
         GameEvents.current.ButtonPress();
-        PlayerPrefs.SetInt("HighScore", 0);
+        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.SetInt("HighScore", 0);
+
+        // TODO feels half assed
+        GameObject.FindGameObjectWithTag($"Color Manager").GetComponent<ColorManager>().LoadColors();
     }
 }

@@ -9,6 +9,9 @@ public class SfxPlayerPrefs : MonoBehaviour
     public string togglePlayerPrefs;
     private SfxManager musicManager;
     
+    void Awake() {
+        // LoadToggle();
+    }
     void Start() {
         musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<SfxManager>();
         LoadToggle();
@@ -23,6 +26,7 @@ public class SfxPlayerPrefs : MonoBehaviour
     public void ChangeSfx(bool turnOn) {
         if (turnOn) {
             musicManager.TurnOnSfx();
+            toggle.isOn = true;
             GameEvents.current.ButtonPress();
         } else {
             musicManager.TurnOffSfx();
@@ -31,6 +35,7 @@ public class SfxPlayerPrefs : MonoBehaviour
     
     public void ChangeBackgroundMusic(bool turnOn) {
         if (turnOn) {
+            toggle.isOn = true;
             musicManager.TurnOnMusic();
         } else {
             musicManager.TurnOffMusic();
