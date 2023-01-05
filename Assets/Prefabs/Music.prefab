@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2900339795606639701}
   m_Layer: 0
   m_Name: Music
-  m_TagString: Untagged
+  m_TagString: Music Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07df5797fe5dd234fbe37fa50450a41e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.506
   m_Pitch: 1
   Loop: 1
@@ -144,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c659d183298284582252c7075ec968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicOn: 0
+  sfxOn: 0
+  backgroundMusic: {fileID: 1753356085994014394}
   BallPaddleHitSfx: {fileID: 1753356085994014398}
   FinishRoundSfx: {fileID: 5086021650351545618}
   buttonSfx: {fileID: 2900339795606639701}

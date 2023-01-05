@@ -38,12 +38,12 @@ public class ScoreCounter : MonoBehaviour
 
     private void SaveHighScore() {
         if (!PlayerPrefs.HasKey("HighScore")) {
-            PlayerPrefs.SetString("HighScore", "0");
+            PlayerPrefs.SetInt("HighScore", 0);
         }
         
-        int currentHighScore = int.Parse(PlayerPrefs.GetString("HighScore"));
+        int currentHighScore = PlayerPrefs.GetInt("HighScore");
         if ( counter > currentHighScore) {
-            PlayerPrefs.SetString("HighScore", counter.ToString());
+            PlayerPrefs.SetInt("HighScore", counter);
         }
     }
 }

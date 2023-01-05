@@ -17,11 +17,11 @@ public class DeathScreenHighScore : MonoBehaviour
     }
 
     void InstantiateDefaultHighScore() {
-        PlayerPrefs.SetString("HighScore", "0");
+        PlayerPrefs.SetInt("HighScore", 0);
     }
 
     void LoadHighScore() {
-        string highScore = PlayerPrefs.GetString("HighScore");
+        string highScore = PlayerPrefs.GetInt("HighScore").ToString();
         gameObject.GetComponent<TMP_Text>().text = "High Score: " + highScore;
     }
 }

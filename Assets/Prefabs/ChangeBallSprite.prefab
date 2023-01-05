@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteId: 0
+  spriteType: 
 --- !u!114 &991167568648361124
 MonoBehaviour:
   m_ObjectHideFlags: 0

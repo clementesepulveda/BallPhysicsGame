@@ -24,7 +24,7 @@ public class HeadBallInstantiate : MonoBehaviour
     }
 
     private void SaveSpriteIndex(string spriteName, int index) {
-        PlayerPrefs.SetString(spriteName, index.ToString());
+        PlayerPrefs.SetInt(spriteName, index);
     }
 
     private void LoadSprites() {
@@ -40,7 +40,7 @@ public class HeadBallInstantiate : MonoBehaviour
     }
 
     private int GetSpriteIndex(string spriteName) {
-        return int.Parse(PlayerPrefs.GetString(spriteName));
+        return PlayerPrefs.GetInt(spriteName);
     }
 
     private GameObject InstantiateBallPrefab(GameObject prefab) {
@@ -49,13 +49,6 @@ public class HeadBallInstantiate : MonoBehaviour
         newObject.transform.SetParent(canvas.transform, false);
         return newObject;
     }
-
-    // private GameObject InstantiatePrefab(GameObject prefab, Vector3 position) {
-    //     GameObject newObject = Instantiate(prefab, position, Quaternion.identity) as GameObject;
-    //     GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
-    //     newObject.transform.SetParent(canvas.transform, false);
-    //     return newObject;
-    // }
 
     private void InstantiateHeadPrefab(GameObject prefab) {
         GameObject newObject = Instantiate(prefab) as GameObject;

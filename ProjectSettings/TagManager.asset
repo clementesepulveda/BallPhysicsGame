@@ -22,6 +22,7 @@ TagManager:
   - Head Sprite
   - Neck
   - Point To
+  - Music Manager
   layers:
   - Default
   - TransparentFX
