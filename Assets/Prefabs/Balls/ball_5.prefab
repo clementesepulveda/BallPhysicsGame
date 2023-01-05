@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4029542416764479918}
   - component: {fileID: 4179140104337016107}
   m_Layer: 0
-  m_Name: yellow amongus
+  m_Name: ball_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
