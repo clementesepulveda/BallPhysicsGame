@@ -7,6 +7,14 @@
       "dependencies": {},
       "hash": "b870d64b5704a764fd03aaccb11f2dbe652b1756"
     },
+    "com.lootlocker.lootlockersdk": {
+      "version": "file:C:/Users/cleme/Downloads/unity-sdk-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "2.0.0"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "7.0.7",
       "depth": 1,
@@ -165,7 +173,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

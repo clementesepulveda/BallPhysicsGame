@@ -51,4 +51,25 @@ public class GameEvents : MonoBehaviour
         }
     }
 
+    public event Action onLeaderboardLoad;
+    public void LeaderboardLoad() {
+        if (onLeaderboardLoad != null) {
+            onLeaderboardLoad();
+        }
+    }
+
+    public event Action onLeaderboardFail;
+    public void LeaderboardFail() {
+        if (onLeaderboardFail != null) {
+            onLeaderboardFail();
+        }
+    }
+
+    public event Action<int> onFinalGameScore;
+    public void FinalGameScore(int score) {
+        if (onFinalGameScore != null) {
+            onFinalGameScore(score);
+        }
+    }
+
 }
