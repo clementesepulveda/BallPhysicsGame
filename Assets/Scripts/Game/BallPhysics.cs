@@ -81,6 +81,9 @@ public class BallPhysics : MonoBehaviour
         vel += paddleSpeedTransfer*col.gameObject.GetComponent<MovePaddle>().Velocity;
         vel.y = Mathf.Clamp(vel.y, minBounceSpeed, maxBounceSpeed);
 
+        // just a little randomness in the x value why not
+        vel.x += Random.Range(-0.5f, 0.5f);
+
         rb.velocity = vel;
     }
 }
