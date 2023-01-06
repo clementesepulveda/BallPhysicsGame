@@ -500,7 +500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0daface618d853c4daad3d9fb55345e2, type: 3}
   m_Name: 
@@ -1692,10 +1692,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1945,7 +1945,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6063320872628627658}
   - component: {fileID: 1313771816493968228}
-  - component: {fileID: 1313771816493968229}
   - component: {fileID: 1313771816493968226}
   - component: {fileID: 1313771816493968225}
   - component: {fileID: 2020355405540790449}
@@ -1968,13 +1967,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbdc19b05786094087563e6c452a244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityScale: 2
+  gravityScale: 2.5
   paddleSpeedTransfer: 0.8
-  minBounceSpeed: 3
+  minBounceSpeed: 6
   maxBounceSpeed: 120
   initialSpeed: 6
-  minInitAngle: -25
-  maxInitAngle: 25
+  minInitAngle: -1
+  maxInitAngle: 1
 --- !u!50 &1313771816493968226
 Rigidbody2D:
   serializedVersion: 4
@@ -1990,7 +1989,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 3
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -2037,33 +2036,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 57e33134c8d16a84da33997e072f1396, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1313771816493968229
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313771816493968224}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1001 &1753356087084140874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2246,7 +2229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.046020508, y: -1.7719727}
+  m_AnchoredPosition: {x: 0.046142578, y: -1.7719727}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3567012148843083053
@@ -2368,7 +2351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.16967773, y: 1.1702881}
+  m_AnchoredPosition: {x: 0, y: 1.1702881}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7066146956740348844
