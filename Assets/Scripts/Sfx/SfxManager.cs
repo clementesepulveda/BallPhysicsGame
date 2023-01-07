@@ -22,6 +22,8 @@ public class SfxManager : MonoBehaviour
 
     // Button Sound
     public AudioSource buttonSfx;
+    // Error Soud 
+    public AudioSource errorSfx;
 
     public static SfxManager Instance { get; private set; }
 
@@ -41,6 +43,7 @@ public class SfxManager : MonoBehaviour
         GameEvents.current.onPaddleHit += PlayBallPaddleHit;
         GameEvents.current.onBallDeath += PlayFinishRoundSound;
         GameEvents.current.onButtonPress += PlayButtonSfx;
+        GameEvents.current.onLeaderboardFail += PlayErrorSfx;
 
         Load(); 
     }
@@ -52,6 +55,10 @@ public class SfxManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("sfx_on")) {
             PlayerPrefs.SetInt("sfx_on", 1);
         } 
+    }
+
+    private void PlayErrorSfx() {
+        errorSfx.Play();
     }
 
     private void Load() {

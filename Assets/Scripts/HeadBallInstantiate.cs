@@ -5,10 +5,6 @@ using UnityEngine;
 public class HeadBallInstantiate : MonoBehaviour
 {
     public GameObject arrowObject;
-    // public GameObject playerObject;
-
-    // public Sprite[] headSprites;
-    // public Sprite[] neckSprites;
     
 
     public GameObject[] ballPrefabs;
@@ -44,7 +40,7 @@ public class HeadBallInstantiate : MonoBehaviour
     }
 
     private GameObject InstantiateBallPrefab(GameObject prefab) {
-        GameObject newObject = Instantiate(prefab, new Vector3(0, 2, 0), Quaternion.identity) as GameObject;
+        GameObject newObject = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         GameObject canvas = GameObject.FindGameObjectWithTag("Ball");
         newObject.transform.SetParent(canvas.transform, false);
         return newObject;

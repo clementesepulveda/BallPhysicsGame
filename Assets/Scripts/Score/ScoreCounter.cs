@@ -9,7 +9,7 @@ public class ScoreCounter : MonoBehaviour
     private GameObject scoreObject;
 
     private TMP_Text scoreText;
-    private int counter;
+    public int counter; // todo make this private, its only for debugging
 
     // Start is called before the first frame update
     void Start() {

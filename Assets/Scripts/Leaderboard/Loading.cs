@@ -10,12 +10,12 @@ public class Loading : MonoBehaviour
 
     void Start() {
         GameEvents.current.onLeaderboardLoad += DeleteObject;
-        GameEvents.current.onLeaderboardFail += DeleteObject;
+        GameEvents.current.onLeaderboardFail += ShowFailAndDeleteObject;
     }
 
     void OnDestroy() {
         GameEvents.current.onLeaderboardLoad -= DeleteObject;
-        GameEvents.current.onLeaderboardFail -= DeleteObject;
+        GameEvents.current.onLeaderboardFail -= ShowFailAndDeleteObject;
     }
 
     void Update() {
@@ -23,7 +23,6 @@ public class Loading : MonoBehaviour
     }
 
     private void ShowFailAndDeleteObject() {
-        Debug.Log("why?");
         Instantiate(failScreen);
 
         // TODO feels half assed

@@ -52,9 +52,9 @@ public class LeaderboardController : MonoBehaviour
 
         LootLockerSDKManager.SubmitScore(memberId, score, ID.ToString(), (response) => {
             if ( response.success ) {
-                Debug.Log("YAY IT SUBMITED");
+                // Debug.Log("YAY IT SUBMITED");
             } else {
-                Debug.Log("Its debugging time my dudes for submition");
+                // Debug.Log("Its debugging time my dudes for submition");
             }
         });
     }

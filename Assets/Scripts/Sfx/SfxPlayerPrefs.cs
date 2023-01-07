@@ -12,6 +12,7 @@ public class SfxPlayerPrefs : MonoBehaviour
     void Awake() {
         // LoadToggle();
     }
+
     void Start() {
         musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<SfxManager>();
         LoadToggle();
@@ -19,7 +20,9 @@ public class SfxPlayerPrefs : MonoBehaviour
 
     void LoadToggle() {
         if (PlayerPrefs.GetInt(togglePlayerPrefs) == 0) {
-            toggle.isOn = false;
+            toggle.toggleTransition = Toggle.ToggleTransition.None;
+            toggle.SetIsOnWithoutNotify(false);
+            toggle.toggleTransition = Toggle.ToggleTransition.Fade;
         } 
     }
     

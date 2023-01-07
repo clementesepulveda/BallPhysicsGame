@@ -9,6 +9,7 @@ public class BallPhysics : MonoBehaviour
 
     [SerializeField]
     private float gravityScale = 1;
+    public float ballBounciness = 1;
 
     [SerializeField]
     private float paddleSpeedTransfer = 1;
@@ -29,6 +30,7 @@ public class BallPhysics : MonoBehaviour
     private float maxInitAngle = 30;
 
 
+
     private Rigidbody2D rb;
     private Vector3 velocityBeforeCollision;
 
@@ -43,7 +45,7 @@ public class BallPhysics : MonoBehaviour
 
     }
 
-    void Update() {
+    void FixedUpdate() {
         if (Input.anyKey && !gameHasStarted) {
             gameHasStarted = true;
             
@@ -62,27 +64,21 @@ public class BallPhysics : MonoBehaviour
     }
     
     void OnCollisionEnter2D(Collision2D col) {
-        if ( ReadyForPaddleHit() && col.gameObject.tag == "Player" ) {
+        if ( col.gameObject.tag == "Player" ) {
             GameEvents.current.PaddleHit();
             AddYVelocity(col);
         }
     }
 
-    private bool ReadyForPaddleHit() {
-        // TODO Fix physics my guy
-        return true;
-        // return rb.velocity.y <= 0.0;
-    }
-
     private void AddYVelocity(Collision2D col) {
         Vector3 vel = velocityBeforeCollision;
 
-        vel = Vector3.Reflect(vel, col.contacts[0].normal);
-        vel += paddleSpeedTransfer*col.gameObject.GetComponent<MovePaddle>().Velocity;
+        vel = Vector3.Reflect(vel, col.contacts[0].normal) * ballBounciness;
+        vel += col.gameObject.GetComponent<MovePaddle>().Velocity * paddleSpeedTransfer;
         vel.y = Mathf.Clamp(vel.y, minBounceSpeed, maxBounceSpeed);
 
         // just a little randomness in the x value why not
-        vel.x += Random.Range(-0.5f, 0.5f);
+        // vel.x += Random.Range(-0.5f, 0.5f);
 
         rb.velocity = vel;
     }

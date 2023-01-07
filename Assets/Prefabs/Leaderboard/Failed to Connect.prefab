@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3321135713006827329}
   m_Layer: 5
   m_Name: Image
-  m_TagString: Color 3 Sprite
+  m_TagString: Color 3 Image
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 3321135713861889822}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Color 3 Image
+  m_TagString: Color 3 Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,11 +12,10 @@ public class ShowLeaderboard : MonoBehaviour
 
     void Start() {
         LootLockerSDKManager.StartGuestSession((response) => {
-            Debug.Log(response);
             if ( response.success ) {
                 ShowScores();
             } else {
-                Debug.Log("Its debugging time my dudes");
+                GameEvents.current.LeaderboardFail();
             }
         });
     }
@@ -42,8 +41,7 @@ public class ShowLeaderboard : MonoBehaviour
                 GameObject.FindGameObjectWithTag($"Color Manager").GetComponent<ColorManager>().LoadColors();
 
             } else {
-                GameEvents.current.LeaderboardFail();
-                Debug.Log("Its debugging time my dudes for submition");
+                // Debug.Log("Its debugging time my dudes for submition");
             }    
         });
 
