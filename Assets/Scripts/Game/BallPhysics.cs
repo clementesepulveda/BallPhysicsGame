@@ -28,6 +28,8 @@ public class BallPhysics : MonoBehaviour
 
     [SerializeField]
     private float maxInitAngle = 30;
+    public float minVelForRandom = 6;
+    public float minRandom = 0.5f;
 
 
 
@@ -78,7 +80,10 @@ public class BallPhysics : MonoBehaviour
         vel.y = Mathf.Clamp(vel.y, minBounceSpeed, maxBounceSpeed);
 
         // just a little randomness in the x value why not
-        // vel.x += Random.Range(-0.5f, 0.5f);
+        if ( vel.y < minVelForRandom ) {
+            Debug.Log("Random");
+            vel.x += Random.Range(-minRandom, minRandom);
+        }
 
         rb.velocity = vel;
     }

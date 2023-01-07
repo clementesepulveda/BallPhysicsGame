@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     void OnDisable()
     {
         Time.timeScale = 1;
-        GameObject.Find("Paddle").GetComponent<MovePaddle>().canMove = false;
 
     }
 
@@ -21,9 +20,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void DeactivatePauseMenu() {
-        GameObject.Find("Paddle").GetComponent<MovePaddle>().canMove = false;
         GameEvents.current.ButtonPress();
         pauseMenu.SetActive(false);
-        GameObject.Find("Paddle").GetComponent<MovePaddle>().canMove = false;
+        Debug.Log("DEACTivating");
+
+        GameObject.Find("Paddle").GetComponent<MovePaddle>().isPaused = false;
     }
 }

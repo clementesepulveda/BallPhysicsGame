@@ -8,10 +8,9 @@ public class ButtonOnMouseDown : MonoBehaviour, IPointerDownHandler
     public GameObject pauseMenu;
 
     public void ActivatePauseMenu() {
-        GameObject.Find("Paddle").GetComponent<MovePaddle>().canMove = false;
+        GameObject.Find("Paddle").GetComponent<MovePaddle>().isPaused = true;
         GameEvents.current.ButtonPress();
         pauseMenu.SetActive(true);
-        GameObject.Find("Paddle").GetComponent<MovePaddle>().canMove = false;
     }
 
     public void OnPointerDown(PointerEventData eventData) {

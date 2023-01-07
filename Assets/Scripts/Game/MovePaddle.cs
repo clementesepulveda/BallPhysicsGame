@@ -15,15 +15,17 @@ public class MovePaddle : MonoBehaviour {
     private Vector3 oldPosition;
 
     public bool canMove;
+    public bool isPaused;
 
     void Start() {
         oldPosition = transform.position;
 
         canMove = false;
+        isPaused = false;
     }
 
     void Update() {
-        if ( Input.GetMouseButton(0) || Input.touchCount > 0 ) {
+        if ( (Input.GetMouseButton(0) || Input.touchCount > 0 ) && !isPaused) {
             if ( !EventSystem.current.IsPointerOverGameObject() ) {
                 canMove = true;
             } else if (EventSystem.current.currentSelectedGameObject == null) {
